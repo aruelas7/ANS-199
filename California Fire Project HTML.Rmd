@@ -74,6 +74,35 @@ library(effects)
 library(olsrr)
 library(dplyr)
 
+#Frequency of fires per year 
+##Most fires were shown to be in 2017 
+
+hist(ca_fires2$ArchiveYear)
+
+#Subsets of acres burned by largest fire in the respective county (yearly)
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2013"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2014"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2015"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2016"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2017"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2018"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+ggplot(subset(ca_fires2, ArchiveYear %in% "2019"), aes(AcresBurned,Counties)) +
+  geom_point()
+
+
 ##Start summarizing the total amount of acres burned in a single county for all counties in each individual year
 #Summary for 2013
 ca_2013 = ca_fires2_2013 %>%
